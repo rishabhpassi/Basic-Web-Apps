@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Calorie Calculator</title>
+
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.lite.min.css"
+        integrity="sha512-Eu5EEZpsrO6niYlnhT+ITom/YVGoIZGEsbAvZ+gUJsO3Xaq9+hX4vZnbecMn/Cq5KOdmNOdehu/U80111W9xsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css"
+        integrity="sha512-hj9rznBPdFg9A4fACbJcp4ttzdinMDtPrtZ3gBD11DiY3O1xJfn0r1U5so/J0zwfGOzq9teIaH5rFmjFAFw8SA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- MDB -->
+
+
+
+
+</head>
+
+<body>
+    <h1>
+        <div class="wordart slate"><span class="text">Food Value</span></div>
+    </h1>
+    <div class="input-group">
+        <div class="form-outline">
+            <input id="search-input" type="search" id="form1" class="form-control" />
+            <label class="form-label" for="form1">Search</label>
+        </div>
+        <button id="search-button" type="button" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+    <div class="nutrition">
+        <section class="performance-facts">
+            <header class="performance-facts__header">
+                <h1 class="performance-facts__title">Nutrition Facts</h1>
+                <b>Serving Size</b>
+                <td><b id="serving_size"></b></td>
+
+
+            </header>
+
+            <table class="performance-facts__table">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="small-info">
+                            Amount Per Serving
+                        </th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="2">
+                            <b>Calories</b>
+
+                        </th>
+                        <td>
+
+                            <b id="calories"></b>
+                        </td>
+                    </tr>
+                    <tr class="thick-row">
+                        <td colspan="3" class="small-info">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <b>Total Fat</b>
+                        </th>
+                        <td>
+                            <b id="fat_total"></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blank-cell">
+                        </td>
+                        <th>
+                            Saturated Fat
+
+                        </th>
+                        <td>
+                            <b id="saturated_fat"></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blank-cell">
+                        </td>
+                        <th>
+                            Trans Fat
+                        </th>
+                        <td>
+                            <span id="trans_fat"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <b>Cholesterol</b>
+                        </th>
+                        <td>
+                            <b id="cholestrol"></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <b>Sodium</b>
+                        </th>
+                        <td>
+                            <b id="sodium"></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <b>Total Carbohydrate</b>
+
+                        </th>
+                        <td>
+                            <b id="total_carbs"></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blank-cell">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blank-cell">
+                        </td>
+                        <th>
+                            Sugars
+                        </th>
+                        <td>
+                            <span id="sugars"></span>
+                        </td>
+                    </tr>
+                    <tr class="thick-end">
+                        <th colspan="2">
+                            <b>Protein</b>
+
+                        </th>
+                        <td>
+                            <b id="protein"></b>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="performance-facts__table--grid">
+                <tbody>
+                </tbody>
+            </table>
+
+            <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be
+                higher or lower depending on your calorie needs:</p>
+
+            <table class="performance-facts__table--small small-info">
+                <thead>
+                    <tr>
+                        <td colspan="2"></td>
+                        <th>Calories:</th>
+                        <th>2,000</th>
+                        <th>2,500</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="2">Total Fat</th>
+                        <td>Less than</td>
+                        <td>65g</td>
+                        <td>80g</td>
+                    </tr>
+                    <tr>
+                        <td class="blank-cell"></td>
+                        <th>Saturated Fat</th>
+                        <td>Less than</td>
+                        <td>20g</td>
+                        <td>25g</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Cholesterol</th>
+                        <td>Less than</td>
+                        <td>300mg</td>
+                        <td>300 mg</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Sodium</th>
+                        <td>Less than</td>
+                        <td>2,400mg</td>
+                        <td>2,400mg</td>
+                    </tr>
+                    <tr>
+                        <th colspan="3">Total Carbohydrate</th>
+                        <td>300g</td>
+                        <td>375g</td>
+                    </tr>
+                    <tr>
+                        <td class="blank-cell"></td>
+                        <th colspan="2">Dietary Fiber</th>
+                        <td>25g</td>
+                        <td>30g</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <div id="piechart" style="max-width: 900px; min-height: 500px;"></div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+* {
+    text-align: center;
+    align-items: center;
+    color: rgb(0, 41, 224);
+    background: rgb(105, 24, 24) no-repeat 50% url("./AdobeStock_444274525.jpeg");
+}
+
+a {
+    text-decoration: none;
+
+}
+
+h3.mb-4.pb-2.fw-normal {
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.input-group-text {
+    margin-left: 1rem;
+}
+
+#cityName {
+    font-size: 3rem;
+}
+
+form {
+    align-items: center;
+    display: flex;
+    margin-left: 1rem;
+    justify-content: space-around;
+}
+
+#main-box {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    /* From https://css.glass */
+    background: rgba(242, 242, 242, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 1px solid rgba(170, 168, 168, 0.58);
+    padding: 5rem;
+
+}
+
+
+
+button#submit {
+    color: black;
+}
+
+.card-body {
+    background: rgba(170, 168, 168, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+
+}
+
+span {
+    color: rgb(79, 46, 4);
+}
